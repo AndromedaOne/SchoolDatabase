@@ -29,6 +29,7 @@ public class SchoolDatabase {
         {
             System.out.println(person.asString());
             System.out.println();
+            System.out.println("here");
         }
     }
 }
