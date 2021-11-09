@@ -7,17 +7,24 @@ public class PostalAddress {
     private String m_state;
     private int m_zipcode;
 
+    // cannot take zipcode as an int because of zipcodes with leading zero
+    // for example, Shirley is 01464 and to java the leading "0" means the
+    // number is in octal (base 8), not decimal (base 10). to deal with this
+    // take the zipcode as a string and convert it to an int
     public PostalAddress(String apartment, String street, String city, 
-    String state, int zipcode)
+    String state, String zipcode)
     {
         m_apartment = apartment;
         m_street = street;
         m_city = city;
         m_state = state;
-        m_zipcode = zipcode;
+        // java profides a static method to convert a String into an 
+        // integer called parseInt.
+        m_zipcode = Integer.parseInt(zipcode);
     }
 
-    public PostalAddress(String street, String city, String state, int zipcode)
+    public PostalAddress(String street, String city, String state, 
+        String zipcode)
     {
         this("", street, city, state, zipcode);
     }
