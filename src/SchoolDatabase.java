@@ -30,7 +30,7 @@ public class SchoolDatabase {
         m_people.add(new Staff(new Name("Xiao", "Ronald", "Whynot", 
             NameSuffix.III), 
             new Date(new GregorianCalendar(1972, 10, 21).getTimeInMillis()),
-            new PostalAddress("221b Baker St", "Ayer", "MA", 1465),
+            new PostalAddress("221b Baker St", "Ayer", "MA", "01465"),
             "Custodian", new Hourly(41.35)));
 
         // dump everyone
