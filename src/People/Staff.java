@@ -1,6 +1,9 @@
+package People;
 import java.util.Date;
 
 import Pay.Pay;
+import People.SupportingClasses.Name;
+import People.SupportingClasses.PostalAddress;
 
 public class Staff extends Person {
 

@@ -3,6 +3,13 @@ import java.util.GregorianCalendar;
 import java.util.Vector;
 
 import Pay.Hourly;
+import People.Person;
+import People.Staff;
+import People.Student;
+import People.SupportingClasses.Grade;
+import People.SupportingClasses.Name;
+import People.SupportingClasses.NameSuffix;
+import People.SupportingClasses.PostalAddress;
 
 public class SchoolDatabase {
     public static void main(String[] args) throws Exception 
@@ -34,22 +41,24 @@ public class SchoolDatabase {
             "Custodian", new Hourly(41.35)));
 
         // dump everyone
+        System.out.println("--- Everyone in databasae...\n");
         for(Person person : m_people) 
         {
             System.out.println(person.asString());
             System.out.println();
-            System.out.println("here");
         }
+        System.out.println("--- Done with everyone...\n");
 
-        System.out.println("\nStudents...\n\n");
+        System.out.println("\n--- Students...\n\n");
         // dump just students
         for(Person student : m_people)
         {
-            if(student.getClassification() == "Student")
+            if(student.getClassification().equals("Student"))
             {
                 System.out.println(student.asString());
                 System.out.println();
             }
         }
+        System.out.println("--- Done with students...\n");
     }
 }

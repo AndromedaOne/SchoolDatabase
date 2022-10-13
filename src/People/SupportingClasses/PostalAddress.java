@@ -1,3 +1,4 @@
+package People.SupportingClasses;
 import java.text.DecimalFormat;
 
 public class PostalAddress {

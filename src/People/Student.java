@@ -1,4 +1,9 @@
+package People;
 import java.util.Date;
+
+import People.SupportingClasses.Grade;
+import People.SupportingClasses.Name;
+import People.SupportingClasses.PostalAddress;
 
 public class Student extends Person {
 

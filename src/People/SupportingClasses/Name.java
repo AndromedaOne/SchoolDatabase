@@ -1,3 +1,4 @@
+package People.SupportingClasses;
 public class Name {
     
     private String m_first;

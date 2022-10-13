@@ -1,6 +1,10 @@
+package People;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+
+import People.SupportingClasses.Name;
+import People.SupportingClasses.PostalAddress;
 
 public abstract class Person {
     
