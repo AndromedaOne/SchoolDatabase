@@ -1,0 +1,9 @@
+{
+    "editor.minimap.enabled": false,
+    "editor.rulers": [
+        {
+          "column": 80,
+          "color": "#ff0000"
+        }
+      ],
+}

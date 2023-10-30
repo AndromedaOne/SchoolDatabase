@@ -12,7 +12,8 @@ public class Teacher extends Person {
     private Department m_department;
     private Salary m_salary;
 
-    public Teacher(Name name, Date birthday, PostalAddress address, Department dept, Salary salary) {
+    public Teacher(Name name, Date birthday, PostalAddress address, 
+        Department dept, Salary salary) {
         super(name, birthday, address);
         m_department = dept;
         m_salary = salary;
