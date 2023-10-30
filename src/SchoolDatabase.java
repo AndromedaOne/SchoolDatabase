@@ -3,12 +3,9 @@ import java.util.GregorianCalendar;
 import java.util.Vector;
 
 import Pay.Hourly;
-import Pay.Salary;
 import People.Person;
 import People.Staff;
 import People.Student;
-import People.Teacher;
-import People.SupportingClasses.Department;
 import People.SupportingClasses.Grade;
 import People.SupportingClasses.Name;
 import People.SupportingClasses.NameSuffix;
@@ -49,17 +46,6 @@ public class SchoolDatabase {
                 new PostalAddress("221b Baker St", "Ayer", "MA", 
                         "01465"), StaffPosition.FoodService, 
                         new Hourly(41.35)));
-        m_people.add(new Teacher(new Name("John", "Bob", "Johnson", 
-                        NameSuffix.II),
-                new Date(new GregorianCalendar(1984, 12, 25).getTimeInMillis()),
-                new PostalAddress("23 Main St", "Lemeonster", "MA", 
-                        "67393"), Department.History,
-                new Salary(75000.0)));
-        m_people.add(new Teacher(new Name("Kelly", "Bobothan"), 
-                new Date(new GregorianCalendar(1906, 10, 9).getTimeInMillis()),
-                new PostalAddress("34", "Left St", "Ayer", 
-                        "MA", "01465"), Department.Science,
-                        new Salary(86826.1)));
         
         // dump everyone
         System.out.println("--- Everyone in databasae...\n");
