@@ -47,8 +47,8 @@ public class Name {
     public String toString()
     {
         String name = m_first + " " + 
-        (m_middle.isEmpty() ? "" : (m_middle + " ")) + m_last +
-        (m_suffix == NameSuffix.None ? "" : (", " + m_suffix.name()));
+            (m_middle.isEmpty() ? "" : (m_middle + " ")) + m_last +
+            (m_suffix == NameSuffix.None ? "" : (", " + m_suffix.name()));
         return(name);
     }
 }
