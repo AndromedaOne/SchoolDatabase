@@ -44,6 +44,7 @@ public class Name {
         return(m_suffix);
     }
 
+    @Override
     public String toString()
     {
         String name = m_first + " " + 

@@ -8,10 +8,10 @@ public class PostalAddress {
     private String m_state;
     private int m_zipcode;
 
-    // cannot take zipcode as an int because of zipcodes with leading zero
-    // for example, Shirley is 01464 and to java the leading "0" means the
-    // number is in octal (base 8), not decimal (base 10). to deal with this
-    // take the zipcode as a string and convert it to an int
+    /* cannot take zipcode as an int because of zipcodes with leading zero
+     for example, Shirley is 01464 and to java the leading "0" means the
+     number is in octal (base 8), not decimal (base 10). to deal with this
+     take the zipcode as a string and convert it to an int */
     public PostalAddress(String apartment, String street, String city, 
     String state, String zipcode)
     {
