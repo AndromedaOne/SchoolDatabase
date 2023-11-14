@@ -3,6 +3,7 @@ import java.util.GregorianCalendar;
 import java.util.Vector;
 
 import Pay.Hourly;
+import People.Administrator;
 import People.Person;
 import People.Staff;
 import People.Student;
@@ -11,6 +12,7 @@ import People.SupportingClasses.Name;
 import People.SupportingClasses.NameSuffix;
 import People.SupportingClasses.PostalAddress;
 import People.SupportingClasses.StaffPosition;
+import People.SupportingClasses.Title;
 
 public class SchoolDatabase {
     public static void main(String[] args) throws Exception 
@@ -46,6 +48,10 @@ public class SchoolDatabase {
                 new PostalAddress("221b Baker St", "Ayer", "MA", 
                         "01465"), StaffPosition.FoodService, 
                         new Hourly(41.35)));
+        m_people.add(new Administrator(new Name("Christos","","Demetricakas",NameSuffix.III),
+                 new Date(new GregorianCalendar(2007, 4, 16).getTimeInMillis()), 
+                 new PostalAddress("123 Johnson lane", "Ayer","MA","01432"), 
+                 Title.Principal, new salary()))
         
         // dump everyone
         System.out.println("--- Everyone in databasae...\n");
