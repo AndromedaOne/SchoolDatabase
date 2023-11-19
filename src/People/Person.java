@@ -1,6 +1,7 @@
 package People;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Comparator;
 import java.util.Date;
 
 import People.SupportingClasses.Name;
@@ -46,5 +47,21 @@ public abstract class Person {
             diff--;
         }
         return(diff);
+    }
+
+    public Name getName() {
+        return m_name;
+    }
+    public static class SortByName implements Comparator<Person> {
+        @Override
+        public int compare(Person arg0, Person arg1) {
+            if(arg0.getName().getLastName().equals(arg1.getName().getLastName())) {
+                return(arg0.getName().getFirstName().
+                    compareTo(arg1.getName().getFirstName()));
+            } else {
+                return arg0.getName().getLastName().
+                    compareTo(arg1.getName().getLastName());
+            }
+        }
     }
 }
