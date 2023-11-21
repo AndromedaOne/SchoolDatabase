@@ -33,6 +33,12 @@ public class SchoolDatabase {
                         "4 Privet Drive",
                         "Ayer", "MA", "01432"),
                 Grade.Junior));
+        m_people.add(new Staff(new Name("Xiao", "Ronald", "Whynot",
+                NameSuffix.III),
+                new Date(new GregorianCalendar(1972, 10, 21).getTimeInMillis()),
+                new PostalAddress("221b Baker St", "Ayer", "MA", 
+                        "01465"), StaffPosition.FoodService, 
+                        new Hourly(41.35)));
         m_people.add(new Student(new Name("Alicia", "Augello", "Keys"),
                 new Date(new GregorianCalendar(2004, 6, 12).getTimeInMillis()),
                 new PostalAddress("1313 Mockingbird Lane", "Shirley",
@@ -42,17 +48,15 @@ public class SchoolDatabase {
                 new Date(new GregorianCalendar(2005, 8, 2).getTimeInMillis()),
                 new PostalAddress("742 Evergreen Terrace", "Ayer", 
                         "MA", "01432"), Grade.Junior));
-        m_people.add(new Staff(new Name("Xiao", "Ronald", "Whynot",
-                NameSuffix.III),
-                new Date(new GregorianCalendar(1972, 10, 21).getTimeInMillis()),
-                new PostalAddress("221b Baker St", "Ayer", "MA", 
-                        "01465"), StaffPosition.FoodService, 
-                        new Hourly(41.35)));
+        m_people.add(new Staff(new Name("Alexander", "Julio", "Doe"),
+                new Date(new GregorianCalendar(1956, 1, 29).getTimeInMillis()),
+                new PostalAddress("301 Cobblestone Way", "Bedrock", "Jurassic", 
+                        "70777"), StaffPosition.Maintenance, new Hourly(52.38)));
+        m_people.sort(new Person.SortByName());
         m_people.add(new Administrator(new Name("Christos","","Demetricakas",NameSuffix.III),
                  new Date(new GregorianCalendar(2007, 4, 16).getTimeInMillis()), 
                  new PostalAddress("123 Johnson lane", "Ayer","MA","01432"), 
                  Title.Principal, new salary()))
-        
         // dump everyone
         System.out.println("--- Everyone in databasae...\n");
         for(Person person : m_people) 
