@@ -3,6 +3,7 @@ import java.util.GregorianCalendar;
 import java.util.Vector;
 
 import Pay.Hourly;
+import Pay.Salary;
 import People.Administrator;
 import People.Person;
 import People.Staff;
@@ -52,11 +53,12 @@ public class SchoolDatabase {
                 new Date(new GregorianCalendar(1956, 1, 29).getTimeInMillis()),
                 new PostalAddress("301 Cobblestone Way", "Bedrock", "Jurassic", 
                         "70777"), StaffPosition.Maintenance, new Hourly(52.38)));
-        m_people.sort(new Person.SortByName());
+        
         m_people.add(new Administrator(new Name("Christos","","Demetricakas",NameSuffix.III),
                  new Date(new GregorianCalendar(2007, 4, 16).getTimeInMillis()), 
                  new PostalAddress("123 Johnson lane", "Ayer","MA","01432"), 
-                 Title.Principal, new salary()))
+                 Title.Principal, new Salary(110000.05)));
+        m_people.sort(new Person.SortByName());
         // dump everyone
         System.out.println("--- Everyone in databasae...\n");
         for(Person person : m_people) 
