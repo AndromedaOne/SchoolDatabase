@@ -78,13 +78,17 @@ public class SchoolDatabase {
             }
         }
         System.out.println("--- Done with students...\n");
-        // dump Teachers
-        for(Person teacher : m_people) {
-                if(teacher.getClassification().equals("Teacher")){
-                        System.out.println(teacher.asString());
-                        System.out.println();
-                }
+        // dump staff
+        System.out.println("\n--- Staff...");
+        for(Person staff : m_people)
+        {
+            if(staff.getClassification().equals("Staff"))
+            {
+                System.out.println(staff.asString());
+                System.out.println();
+            }
         }
+        System.out.println("--- Done with staff...\n");
         // dump Administrator
         for(Person admin : m_people) {
                 if(admin.getClassification().equals("Administrator")){
