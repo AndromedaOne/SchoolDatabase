@@ -3,6 +3,8 @@ import java.util.GregorianCalendar;
 import java.util.Vector;
 
 import Pay.Hourly;
+import Pay.Salary;
+import People.Administrator;
 import People.Person;
 import People.Staff;
 import People.Student;
@@ -11,6 +13,7 @@ import People.SupportingClasses.Name;
 import People.SupportingClasses.NameSuffix;
 import People.SupportingClasses.PostalAddress;
 import People.SupportingClasses.StaffPosition;
+import People.SupportingClasses.Title;
 
 public class SchoolDatabase {
     public static void main(String[] args) throws Exception 
@@ -50,6 +53,10 @@ public class SchoolDatabase {
                 new Date(new GregorianCalendar(1956, 1, 29).getTimeInMillis()),
                 new PostalAddress("301 Cobblestone Way", "Bedrock", "Jurassic", 
                         "70777"), StaffPosition.Maintenance, new Hourly(52.38)));
+        m_people.add(new Administrator(new Name("Justin","Smith"), 
+                new Date(new GregorianCalendar(1983, 8, 11).getTimeInMillis()),
+                new PostalAddress("19 mountain road", "Ayer", "MA", "01432"),
+                Title.VicePriceipal, new Salary(100000.0)));
         m_people.sort(new Person.SortByName());
         // dump everyone
         System.out.println("--- Everyone in databasae...\n");
@@ -78,6 +85,13 @@ public class SchoolDatabase {
                         System.out.println();
                 }
         }
-
+        // dump Administrator
+        for(Person admin : m_people) {
+                if(admin.getClassification().equals("Administrator")){
+                    System.out.println(admin.asString());
+                    System.out.println();
+                }
+        }
+        System.out.println("--- Done with administrators...\n");
     }
 }
