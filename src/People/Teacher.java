@@ -1,9 +1,8 @@
 package People;
 
 import java.util.Date;
-import java.util.List;
 
-import People.SupportingClasses.Classes;
+import Pay.Salary;
 import People.SupportingClasses.Department;
 import People.SupportingClasses.Name;
 import People.SupportingClasses.PostalAddress;
@@ -11,22 +10,22 @@ import People.SupportingClasses.PostalAddress;
 public class Teacher extends Person {
 
     private Department m_department;
-    private List<Classes> m_classesTaught;
+    private Salary m_salary;
 
     public Teacher (Name name,Date dob, PostalAddress addr,
-    Department dept, List<Classes> classes )
+    Department dept, Salary salary)
     {
         super(name,dob,addr);
         m_department=dept;
-        m_classesTaught=classes;
+        m_salary=salary;
         
     }
 
     @Override
     public String asString() {
         String teacher = getPersonAsString() + "\nDepartment: " +
-                m_department.toString() + "\nclassesTaught: " +
-                m_classesTaught.toString();
+                m_department.toString() + "\nSalary: " +
+                m_salary.asString();
         return (teacher);
     }
 
