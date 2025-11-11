@@ -9,6 +9,10 @@ import People.SupportingClasses.Name;
 import People.SupportingClasses.PostalAddress;
 
 public class Teacher extends Person {
+
+    private Department m_department;
+    private List<Classes> m_classesTaught;
+
     public Teacher (Name name,Date dob, PostalAddress addr,
     Department dept, List<Classes> classes )
     {
@@ -20,16 +24,15 @@ public class Teacher extends Person {
 
     @Override
     public String asString() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'asString'");
+        String teacher = getPersonAsString() + "\nDepartment: " +
+                m_department.toString() + "\nclassesTaught: " +
+                m_classesTaught.toString();
+        return (teacher);
     }
 
     @Override
     public String getClassification() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getClassification'");
+       return(this.getClass().getSimpleName());
     }
 
-    private Department m_department;
-    private List<Classes> m_classesTaught;
 }
