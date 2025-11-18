@@ -4,6 +4,7 @@ import java.util.Vector;
 
 import Pay.Hourly;
 import Pay.Salary;
+import People.Administration;
 import People.Person;
 import People.Staff;
 import People.Student;
@@ -14,6 +15,7 @@ import People.SupportingClasses.Name;
 import People.SupportingClasses.NameSuffix;
 import People.SupportingClasses.PostalAddress;
 import People.SupportingClasses.StaffPosition;
+import People.SupportingClasses.Title;
 
 public class SchoolDatabase {
     /**
@@ -57,6 +59,10 @@ public class SchoolDatabase {
                 new Date(new GregorianCalendar(1956, 1, 29).getTimeInMillis()),
                 new PostalAddress("301 Cobblestone Way", "Bedrock", "Jurassic", 
                         "70777"), StaffPosition.Maintenance, new Hourly(52.38)));
+        m_people.add(new Administration(new Name("Robinson","robertson","ruckus",
+            NameSuffix.II), new Date(new GregorianCalendar(1935,10,16).getTimeInMillis()),
+            new PostalAddress("main St", "gregorian", "TN", "53468"), 
+            Title.Principal, new Salary(500.00)));
         m_people.add(new Teacher(new Name("Karen", "Truong"),
                 new Date(new GregorianCalendar(2000, 2, 22).getTimeInMillis()),
                 new PostalAddress("141 Washington Street", "Ayer", "MA", "01432"),
@@ -94,6 +100,12 @@ public class SchoolDatabase {
             }
         }
         System.out.println("--- Done with staff...\n");
+        System.out.println("\n--- Administration...");
+        for (Person admin : m_people){
+            System.out.println(admin.asString());
+            
+        }
+        System.out.println("--- Done with admin... \n");
         System.out.println("\n --- Teachers...");
         for(Person teacher : m_people)
         {
