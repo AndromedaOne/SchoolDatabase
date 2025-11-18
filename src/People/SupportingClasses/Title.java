@@ -1,5 +1,5 @@
 package People.SupportingClasses;
 
 public enum Title {
-    Principal, VicePriceipal, GuidanceCounceler,
+    Principal, VicePrinceipal, GuidanceCounceler,
 }
