@@ -21,13 +21,14 @@ public class Administration extends Person {
 
     @Override
     public String asString() {
-        throw new UnsupportedOperationException("Unimplemented method 'asString'");
+        String administration = getPersonAsString() + "\nTitle: " + m_title +
+            "\nSalary: " + m_salary.asString();
+            return(administration);
     }
 
     @Override
     public String getClassification() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getClassification'");
+            return(this.getClass().getSimpleName());
     }
     
 }
