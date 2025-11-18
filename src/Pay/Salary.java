@@ -19,7 +19,7 @@ public class Salary extends Pay {
 
     @Override
     public String asString() {
-        return("Salary: " + m_salary);
+        return("Salary: " + String.valueOf(m_salary));
     }
     
 }

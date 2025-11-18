@@ -8,6 +8,8 @@ import People.Administration;
 import People.Person;
 import People.Staff;
 import People.Student;
+import People.Teacher;
+import People.SupportingClasses.Department;
 import People.SupportingClasses.Grade;
 import People.SupportingClasses.Name;
 import People.SupportingClasses.NameSuffix;
@@ -16,6 +18,10 @@ import People.SupportingClasses.StaffPosition;
 import People.SupportingClasses.Title;
 
 public class SchoolDatabase {
+    /**
+     * @param args
+     * @throws Exception
+     */
     public static void main(String[] args) throws Exception 
     {
         Vector<Person> m_people = new Vector<Person>();
@@ -57,6 +63,11 @@ public class SchoolDatabase {
             NameSuffix.II), new Date(new GregorianCalendar(1935,10,16).getTimeInMillis()),
             new PostalAddress("main St", "gregorian", "TN", "53468"), 
             Title.Principal, new Salary(500.00)));
+        m_people.add(new Teacher(new Name("Karen", "Truong"),
+                new Date(new GregorianCalendar(2000, 2, 22).getTimeInMillis()),
+                new PostalAddress("141 Washington Street", "Ayer", "MA", "01432"),
+                Department.English,
+                new Salary(45000.90)));
         m_people.sort(new Person.SortByName());
         // dump everyone
         System.out.println("--- Everyone in databasae...\n");
@@ -95,5 +106,15 @@ public class SchoolDatabase {
             
         }
         System.out.println("--- Done with admin... \n");
+        System.out.println("\n --- Teachers...");
+        for(Person teacher : m_people)
+        {
+            if(teacher.getClassification().equals("Teacher"))
+            {
+                System.out.println(teacher.asString());
+                System.out.println();
+            }
+        }
+        System.out.println("--- Done with teachers...\n");
     }
 }
