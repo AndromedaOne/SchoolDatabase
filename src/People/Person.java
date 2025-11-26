@@ -1,22 +1,21 @@
 package People;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Comparator;
-import java.util.Date;
 
+import People.SupportingClasses.DateOfBirth;
 import People.SupportingClasses.Name;
 import People.SupportingClasses.PostalAddress;
 
 public abstract class Person {
     
     private Name m_name;
-    private Date m_birthDay;
+    private DateOfBirth m_dob;
     private PostalAddress m_address;
 
-    public Person(Name name, Date birthday, PostalAddress address)
+    public Person(Name name, DateOfBirth dob, PostalAddress address)
     {
         m_name = name;
-        m_birthDay = birthday;
+        m_dob = dob;
         m_address = address;
     }
 
@@ -29,24 +28,9 @@ public abstract class Person {
         SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/y");
         String person = "Name: " + m_name.toString() + "\nClassification: " +
             getClassification() + "\nBirthday: "
-            + dateFormat.format(m_birthDay) + "\nAge: " + getAge() + 
+            + dateFormat.format(m_dob) + "\nAge: " + m_dob.getAge() + 
             "\nAddress: " + m_address.asString();
         return(person);
-    }
-
-    public int getAge()
-    {
-        Calendar bDay = Calendar.getInstance();
-        bDay.setTime(m_birthDay);
-        Calendar now = Calendar.getInstance();
-        int diff = now.get(Calendar.YEAR) - bDay.get(Calendar.YEAR);
-        if((bDay.get(Calendar.MONTH) > now.get(Calendar.MONTH)) || 
-            ((now.get(Calendar.MONTH) == bDay.get(Calendar.MONTH)) &&
-            (bDay.get(Calendar.DATE) > now.get(Calendar.DATE))))
-        {
-            diff--;
-        }
-        return(diff);
     }
 
     public Name getName() {

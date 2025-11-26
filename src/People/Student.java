@@ -1,6 +1,7 @@
 package People;
 import java.util.Date;
 
+import People.SupportingClasses.DateOfBirth;
 import People.SupportingClasses.Grade;
 import People.SupportingClasses.Name;
 import People.SupportingClasses.PostalAddress;
@@ -9,10 +10,10 @@ public class Student extends Person {
 
     private Grade m_grade;
 
-    public Student(Name name, Date birthday, PostalAddress address,
+    public Student(Name name, DateOfBirth dob, PostalAddress address,
         Grade grade) 
     {
-        super(name, birthday, address);
+        super(name, dob, address);
         m_grade = grade;    
     }
     

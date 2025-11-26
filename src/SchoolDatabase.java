@@ -1,3 +1,4 @@
+import java.time.Month;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Vector;
@@ -6,6 +7,7 @@ import Pay.Hourly;
 import People.Person;
 import People.Staff;
 import People.Student;
+import People.SupportingClasses.DateOfBirth;
 import People.SupportingClasses.Grade;
 import People.SupportingClasses.Name;
 import People.SupportingClasses.NameSuffix;
@@ -18,16 +20,15 @@ public class SchoolDatabase {
         Vector<Person> m_people = new Vector<Person>();
 
         Name newName = new Name("Joe", "Sameer", "Shmoo", NameSuffix.JR);
-        long greg  = new GregorianCalendar(2007, 4, 15).getTimeInMillis();
-        Date newDate = new Date(greg);
+        DateOfBirth dob = new DateOfBirth(Month.FEBRUARY, 13, 2006);
         PostalAddress newAdd = new PostalAddress("123 Sesame Str", 
                 "Shirley", "MA", "01464");
-        Student newStu = new Student(newName, newDate, newAdd, Grade.Freshman);
+        Student newStu = new Student(newName, dob, newAdd, Grade.Freshman);
         m_people.add(newStu);
 
         m_people.add(new Student(new Name("Jane", "Doe"),
-                new Date(new GregorianCalendar(2005, 11, 30).getTimeInMillis()),
-                new PostalAddress("Cupboard Under the Stairs", 
+            new DateOfBirth(Month.NOVEMBER, 30, 2005),
+            new PostalAddress("Cupboard Under the Stairs", 
                         "4 Privet Drive",
                         "Ayer", "MA", "01432"),
                 Grade.Junior));
